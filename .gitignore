@@ -1,0 +1,26 @@
+#Big ugly directories
+Builds
+Temp
+Library
+*Builds
+
+
+#Solution files, Unity auto-rebuilds them so it's not worth tracking
+*.sln
+*.csproj
+*.userprefs
+
+#You can stop tracking previously added files with "git update-index --assume-unchanged *.unityproj"
+*.unityproj
+
+#VSCode specific ignores
+obj
+.vscode
+
+#Stop annoying me mac! Remember : git update-index --assume-unchanged .DS_Store
+.DS_Store
+
+# IL2CPP cache stuff
+*IL2CPPCache
+*IL2CPPStats
+
