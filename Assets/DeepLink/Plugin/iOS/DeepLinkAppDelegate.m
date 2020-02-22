@@ -14,13 +14,13 @@ IMPL_APP_CONTROLLER_SUBCLASS(DeepLinkAppDelegate)
 	}
 }
 
-- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
+- (BOOL) application:(UIApplication*)application openURL:(NSURL*)url options:(NSDictionary *)options;
 {
 	_lastURL = url.absoluteString;
 	const char *URLString = [url.absoluteString UTF8String];
-    UnitySendMessage("_DeepLinkReceiver", "URLOpened", URLString);
+	UnitySendMessage("_DeepLinkReceiver", "URLOpened", URLString);
 
-	return [super application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+	return [super application:application openURL:url options:options];
 }
 
 - (char *) deepLinkURL
